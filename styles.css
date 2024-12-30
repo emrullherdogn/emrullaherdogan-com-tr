@@ -1,0 +1,107 @@
+         /* Temel sıfırlamalar */
+         * {
+             margin: 0;
+             padding: 0;
+             box-sizing: border-box;
+         }
+
+         body {
+             font-family: 'Arial', sans-serif;
+             background: linear-gradient(45deg, white);
+             min-height: 100vh;
+             display: flex;
+             justify-content: flex-start;
+             align-items: center;
+             padding-left: 20px;
+         }
+
+         header {
+             display: flex;
+             align-items: center;
+         }
+
+         .magic-navbar {
+             list-style: none;
+             display: flex;
+             flex-direction: column;
+             gap: 20px;
+         }
+
+         /* Her bir liste öğesi */
+         .magic-navbar li {
+             display: flex;
+             align-items: center;
+         }
+
+         /* Link stili - Kare şeklinde */
+         .magic-navbar a {
+             text-decoration: none;
+             display: flex;
+             align-items: center;
+             justify-content: none;
+             width: 43px;
+             /* Kare genişliği */
+             height: 43px;
+             /* Kare yüksekliği */
+             background-color: rgba(255, 182, 193, 0.8);
+             font-size: 24px;
+             transition: all 0.3s ease;
+             position: relative;
+             overflow: hidden;
+             padding: 10px;
+             transition: width 0.3s ease;
+             /* Hover durumunda genişleme */
+             text-align: center;
+         }
+
+         .magic-navbar a i {
+            color: black;
+         }
+
+         /* Simge ve metni ayırma */
+         .magic-navbar a .icon-text {
+             display: flex;
+             justify-content: center;
+             align-items: center;
+             color: black;
+             font-size: 24px;
+             transition: all 0.3s ease;
+             flex-shrink: 0;
+             /* Simgenin boyutunun küçülmesini engelle */
+             display: flex;
+             justify-content: flex-start;
+             margin-right: 0;
+         }
+
+         /* Metin stili */
+         .magic-navbar a span {
+             position: absolute;
+             top: 50%;
+             left: 70%;
+             transform: translate(-50%, -50%);
+             font-size: 14px;
+             font-weight: bold;
+             color: black;
+             opacity: 0;
+             transition: opacity 0.3s ease, transform 0.3s ease;
+             white-space: nowrap;
+             pointer-events: none;
+             /* Metin üzerine tıklanmasını engeller */
+             left: 45px;
+             /* Sola kaydır */
+             transform: left;
+             text-align: center;
+         }
+
+         /* Hover durumu */
+         .magic-navbar a:hover {
+             background-color: rgba(0, 128, 128, 0.8);
+             width: 130px;
+         }
+
+         /* Hover durumunda metnin görünür hale gelmesi */
+         .magic-navbar a:hover span {
+             opacity: 1;
+             /* Yazı görünür hale gelir */
+             transform: translate(10%, -50%);
+         }

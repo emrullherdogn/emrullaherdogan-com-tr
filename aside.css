@@ -1,0 +1,66 @@
+        /* Sayfanın düzeni */
+        body {
+            display: flex;
+            flex-direction: row;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Navigasyon menüsü */
+        nav {
+            width: 20%;
+            padding: 10px;
+        }
+
+        .magic-navbar {
+            list-style: none;
+            padding: 0;
+        }
+
+        .magic-navbar li {
+            margin: 10px 0;
+        }
+
+        .icon-text {
+            margin-right: 8px;
+        }
+
+        /* Ana içerik alanı */
+        main {
+            flex-grow: 1;
+            padding: 20px;
+        }
+
+        /* Yan bilgi (aside) alanı */
+        aside {
+            width: 25%;
+            padding: 20px;
+            background-color: black, white;
+            border-left: none;
+            position: fixed;
+            right: 0;
+            top: 0;
+            height: 100%;
+            overflow-y: auto;
+        }
+
+        /* Sertifikalar kutusu */
+        .certificates-box {
+            border: 2px solid;
+            padding: 15px;
+            margin-top: 20px;
+            border-radius: 8px;
+            background-color: black, white;
+        }
+
+        .certificates-box h3 {
+            margin-top: 0;
+        }
+
+        /* Footer */
+        footer {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            text-align: center;
+            padding: 10px 0;
+        }
