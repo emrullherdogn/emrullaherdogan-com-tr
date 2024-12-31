@@ -41,14 +41,15 @@ body {
     position: relative;
     overflow: hidden;
     padding: 10px;
-    transition: width 0.3s ease;
     text-align: center;
 }
 
+/* İkon rengi */
 .magic-navbar a i {
     color: black;
 }
 
+/* Hover metni ve animasyon */
 .magic-navbar a span {
     position: absolute;
     top: 50%;
@@ -65,6 +66,7 @@ body {
     text-align: center;
 }
 
+/* Hover efekti */
 .magic-navbar a:hover {
     background-color: rgba(0, 128, 128, 0.8);
     width: 130px;
@@ -77,16 +79,21 @@ body {
 
 /* Mobil cihazlar için hover devre dışı bırakma */
 @media (hover: none) and (pointer: coarse) {
+
+    /* Hover efekti genişlemesini engelle */
     .magic-navbar a {
-        width: 43px !important; /* Mobilde sabit genişlik */
+        width: 43px !important;
     }
 
-    .magic-navbar a:hover {
-        width: 43px; /* Hover genişlemesini engelle */
-    }
-
+    /* Hover durumunda metni gizle */
     .magic-navbar a span {
-        display: none; /* Metni gizle */
+        display: none;
+    }
+
+    /* Linkler mobilde sabit boyutta kalır */
+    .magic-navbar a:hover {
+        width: 43px;
+        /* Sabit genişlik */
     }
 }
 
