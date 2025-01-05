@@ -4,13 +4,12 @@ function showSection(sectionId) {
 
     // Diğer içerikleri gizle
     sections.forEach(function (section) {
-        section.classList.remove('active'); // Aktif sınıfını kaldır
-        section.style.transition = 'none'; // Animasyonu geçici olarak durdur
-        setTimeout(function () {
-            section.style.transition = ''; // Animasyonu tekrar etkinleştir
-        }, 50); // 50ms gecikme
+        section.classList.remove('active');
+        section.style.transition = 'none'; // Animasyonu durdur
+        section.style.display = 'none'; // Gizle
     });
 
-    // Tıklanan bölümü göster
+    // Hedef bölümü göster
     targetSection.classList.add('active');
+    targetSection.style.display = 'block'; // Görünür yap
 }
