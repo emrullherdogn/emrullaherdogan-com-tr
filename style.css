@@ -5,15 +5,83 @@
     box-sizing: border-box;
 }
 
+
 body {
     font-family: 'Arial', sans-serif;
-    background: linear-gradient(45deg, white);
+    background: linear-gradient(45deg, #f0f4f8, #d9e2ec);
+    /* Yumuşak pastel renk geçişi */
     min-height: 100vh;
-    display: flex;
-    justify-content: flex-start;
+    display: none;
+    /* Varsayılan olarak sayfa gizli */
+    justify-content: none;
     align-items: center;
     padding-left: 20px;
+    overflow: hidden;
+    position: relative;
+    /* Grid arka planını yerleştirmek için gerekli */
 }
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(45deg, #2f6a3e, #3b4f63);
+    /* Yeşil ve lacivert renk geçişi */
+    min-height: 100vh;
+    display: none;
+    /* Varsayılan olarak sayfa gizli */
+    justify-content: none;
+    align-items: center;
+    padding-left: 20px;
+    overflow: hidden;
+    position: relative;
+    /* Grid arka planını yerleştirmek için gerekli */
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    min-height: 100vh;
+    display: none;
+    /* Varsayılan olarak sayfa gizli */
+    justify-content: none;
+    align-items: center;
+    padding-left: 20px;
+    overflow: hidden;
+    position: relative;
+    /* Grid arka planını yerleştirmek için gerekli */
+}
+
+/* Grid arka plan için animasyon */
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, #2f6a3e, #003b49, #1d2951, #00416d);
+    /* Varsayılan renk geçişi */
+    background-size: 200% 200%;
+    animation: gridAnimation 10s linear infinite;
+    /* 10 saniye boyunca dönen animasyon */
+    z-index: -1;
+    /* Grid arka planının içeriklerin arkasında olmasını sağlar */
+}
+
+/* Grid renginin animasyonlu geçişi */
+@keyframes gridAnimation {
+    0% {
+        background-position: 0% 0%;
+    }
+
+    50% {
+        background-position: 100% 100%;
+    }
+
+    100% {
+        background-position: 0% 0%;
+    }
+}
+
+
 
 /* Menü stilleri */
 .magic-navbar {
@@ -32,7 +100,8 @@ body {
     text-decoration: none;
     display: flex;
     align-items: center;
-    justify-content: none;
+    justify-content: flex-start;
+    /* İkonların sabit kalmasını sağla */
     width: 43px;
     height: 43px;
     background-color: lightblue;
@@ -42,6 +111,7 @@ body {
     overflow: hidden;
     padding: 10px;
     text-align: center;
+    border-radius: 5px;
 }
 
 /* İkon rengi */
@@ -101,17 +171,18 @@ body {
 .content {
     opacity: 0;
     transform: translateX(100%);
-    transition: opacity 0.5s ease, transform 0.5s ease;
-    padding: 50px;
-    width: 100%;
-    height: 80vh;
+    transition: opacity 0.5s ease, transform 0.5s ease, max-height 0.5s ease;
+    padding: 20px;
+    width: 10%;
+    max-height: 80vh;
     background: white;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     margin: 20px;
     border-radius: 10px;
     display: block;
-    /* İlk başta gösterilmeyecek */
+    overflow: hidden;
 }
+
 
 /* Aktif içerik */
 .content.active {
@@ -127,4 +198,48 @@ h1 {
 footer {
     text-align: center;
     margin-top: 20px;
+    padding: 10px;
+    background: #f4f4f4;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+}
+
+/* Sayfanın düzeni */
+body {
+    display: flex;
+    flex-direction: row;
+    font-family: Arial, sans-serif;
+    overflow: hidden;
+}
+
+/* Navigasyon menüsü */
+nav {
+    width: 20%;
+    padding: 10px;
+}
+
+.icon-text {
+    margin-right: 8px;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    padding: 10px 0;
+    background-color: rgb(51, 90, 118);  /* RGB ile */
+}
+
+footer p {
+    /* footer içindeki yazılar için stil */
+    color: #ffffff;
+    /* Yazı rengini beyaz yapar */
+    font-size: 16px;
+    /* Yazı boyutunu ayarlayabilirsiniz */
+    margin: 0;
+    /* Varsayılan margin'i sıfırlar */
 }
