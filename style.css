@@ -11,7 +11,7 @@ body {
     background: linear-gradient(45deg, #f0f4f8, #d9e2ec);
     /* Yumuşak pastel renk geçişi */
     min-height: 100vh;
-    display: none;
+    display: flex;
     /* Varsayılan olarak sayfa gizli */
     justify-content: none;
     align-items: center;
@@ -19,6 +19,7 @@ body {
     overflow: hidden;
     position: relative;
     /* Grid arka planını yerleştirmek için gerekli */
+
 }
 
 body {
@@ -171,24 +172,26 @@ body::before {
 .content {
     opacity: 0;
     transform: translateX(100%);
-    transition: opacity 0.5s ease, transform 0.5s ease, max-height 0.5s ease;
+    transition: opacity 0.5s ease, transform 0.5s ease, max-width 0.5s ease;
     padding: 20px;
-    width: 10%;
-    max-height: 80vh;
+    width: auto; /* Genişliği içeriğe göre ayarla */
+    max-width: 80vw; /* Maksimum genişlik sınırı belirle */
+    height: auto; /* Yükseklik dinamik olsun */
     background: white;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     margin: 20px;
     border-radius: 10px;
-    display: block;
     overflow: hidden;
+    display: inline-block; /* Yatayda birikmesini sağla */
 }
-
 
 /* Aktif içerik */
 .content.active {
     opacity: 1;
     transform: translateX(0);
 }
+
+
 
 /* Başlık rengi */
 h1 {
@@ -206,6 +209,35 @@ footer {
     bottom: 0;
     left: 0;
 }
+
+/* Footer stilini güncelle */
+footer {
+    width: 100%;
+    padding: 10px 0;
+    background-color: rgb(51, 90, 118);
+    /* RGB ile */
+    text-align: center;
+    margin-top: auto;
+    /* İçeriğin altında footer'ı sabitler */
+}
+
+footer p {
+    color: #ffffff;
+    /* Beyaz metin rengi */
+    font-size: 16px;
+    /* Yazı boyutu */
+    margin: 0;
+    /* Varsayılan margin'i sıfırlıyoruz */
+}
+
+/* Footer'ı mobil cihazlarda düzgün göstermek için */
+@media (max-width: 768px) {
+    footer {
+        position: relative;
+        bottom: 0;
+    }
+}
+
 
 /* Sayfanın düzeni */
 body {
@@ -225,21 +257,13 @@ nav {
     margin-right: 8px;
 }
 
-footer {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    text-align: center;
-    padding: 10px 0;
-    background-color: rgb(51, 90, 118);  /* RGB ile */
-}
-
-footer p {
-    /* footer içindeki yazılar için stil */
-    color: #ffffff;
-    /* Yazı rengini beyaz yapar */
-    font-size: 16px;
-    /* Yazı boyutunu ayarlayabilirsiniz */
-    margin: 0;
-    /* Varsayılan margin'i sıfırlar */
+/* Bu stil, ekran genişliği 768px ve daha genişse uygulanır */
+@media screen and (min-width: 768px) {
+    body {
+        background-color: lightblue;
+        background-repeat: no-repeat;
+    }
+    footer{
+        width: 100%;
+    }
 }
