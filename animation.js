@@ -13,3 +13,5 @@ function showSection(sectionId) {
     targetSection.classList.add('active');
     targetSection.style.display = 'block'; // Görünür yap
 }
+
+
