@@ -4,43 +4,81 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <title>Emrullah ERDOĞAN Otobiyografi Sayfası</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <nav aria-label="Ana Navigasyon Menüsü">
-        <ul class="magic-navbar">
-            <li><a href="#" onclick="showSection('about')" class="nav-item"><i class="fas fa-info-circle"></i><span>Hakkımda</span></a></li>
-            <li><a href="#" onclick="showSection('contact')" class="nav-item"><i class="fas fa-phone-alt"></i><span>İletişim</span></a></li>
-            <li><a href="https://github.com/emrullherdogn" target="_blank" class="nav-item"><i class="fa-brands fa-github"></i><span>Github</span></a></li>
-            <li><a href="/linkedin.html" class="nav-item"><i class="fa-brands fa-linkedin"></i><span>LinkedIn</span></a></li>
+    <div class="navbar">
+        <ul>
+            <li><a href="https://github.com/emrullherdogn" target="_blank"><i class="fab fa-github"
+                        style="color: black;"></i><span>GitHub</span></a></li>
+            <li><a href="https://www.linkedin.com/in/emrullah-erdoğan-2505901a1/" target="_blank"><i class="fab fa-linkedin"
+                        style="color: #0077b5;"></i><span>LinkedIn</span></a></li>
+            <li><a href="https://instagram.com/emrullherdogn" target="_blank"><i class="fab fa-instagram"
+                        style="color: #e4405f;"></i><span>Instagram</span></a></li>
         </ul>
-    </nav>
+    </div>
 
-    <section id="about" class="content">
-        <h1>Hakkımda</h1>
-        <p>Merhaba! Ben Emrullah ERDOĞAN, teknolojiye, yaratıcılığa ve sürekli öğrenmeye tutkuyla bağlı biriyim. İnsanlarla bilgi paylaşmayı, ilham vermeyi ve onların hayatlarında pozitif bir etki yaratmayı seviyorum.</p>
-        <p>Eğitimim ve iş deneyimlerim, farklı bakış açıları geliştirmemi ve çeşitli alanlarda uzmanlaşmamı sağladı. Özellikle [uzmanlık alanlarınız] konularında derin bir bilgi birikimine sahibim. Bu alanlarda üretken ve çözüm odaklı projeler geliştirmek benim için bir tutku.</p>
-        <p>Kendi zamanımda, [hobileriniz] ile ilgilenmekten ve [kişisel ilgi alanlarınız, örneğin: kitap okumak, fotoğraf çekmek ya da seyahat etmek] keyif alıyorum. Hayatımın her alanında, sürekli olarak kendimi geliştirmeye ve daha iyisini yapmaya çalışıyorum.</p>
-        <p>Bu yolculukta öğrendiklerimi paylaşmak ve birlikte güzel işler başarmak için buradayım.</p>
-    </section>
+    <main>
+        <div class="content-section">
+            <section class="content-box about-content-box" ondblclick="collapseBox(this)">
+                <!-- Resim ekle -->
+                <img id="pp" src="img/276130350_335725528573351_5335294981556953547_n.jpg" alt="Emrullah Erdoğan">
 
-    <section id="contact" class="content">
-        <h1>İletişim</h1>
-        <p>Sorularınız, projeleriniz veya iş birlikleriniz için benimle iletişime geçmekten çekinmeyin! Aşağıdaki kanallardan bana kolayca ulaşabilirsiniz:</p>
-        <p>📧 E-posta: emrullherdogn@gmail.com</p>
-        <p>📞 Telefon: +90 538 851 34 44</p>
-        <p>📱 Instagram: <a href="https://instagram.com/emrullherdogn" target="_blank">emrullherdogn</a></p>
-        <p>En kısa sürede size geri dönüş yapmaktan mutluluk duyarım! 😊</p>
-    </section>
+                <h3>Hakkımda</h3>
+                <p>Merhabalar ben Emrullah ERDOĞAN. 1 Ocak 2003 doğumluyum, 22 yaşındayım. Çocukluktan beri bilgisayara
+                    ilgisi olan biriyim. Lise zamanlarında Cisco adında bir şirket ile tanıştım. Bu şirket bana çok şey
+                    kattı. Network bölümünü sevmem bu şirket sayesinde olmuştur. Örnek olarak bir kaynak cihaz düşünün
+                    bu kaynak cihazdan hedef cihaza bir paket atıldğı zaman hedef cihaz bu paketi alır ve kendisi de
+                    kaynak cihazdan gelen paketin aynısını gönderir. Yani şunu demek istiyorum network dünyasında her
+                    şey karşılıklı. Ben de insanlara verilen değerin karşılıklı olmasına önem verdiğim için seviyorum,
+                    öte yandan ağ cihazı yapılandırmaları zevkli olduğu için bu bölğmden devam etmeyi ve hayatımı
+                    Network konusuna adamayı seçtim.</p>
+                <span class="read-more" onclick="expandBox(this)">Devamını oku</span>
+                <span class="close-btn" onclick="collapseBox(this)">×</span>
+            </section>
+
+            <section class="content-box" ondblclick="collapseBox(this)">
+                <h3>İletişim</h3>
+                <p>
+                    E-posta Adresi : <a href="mailto:emrullherdogn@gmail.com">emrullherdogn@gmail.com</a><br>
+                    Telefon Numarası : +90 538 851 34 44<br>
+                    Adres: <strong>Eyüpsutan / İstanbul</strong>
+                </p>
+            </section>
+
+            <section class="content-box" ondblclick="collapseBox(this)">
+                <h3>Sertifikalar</h3>
+                <p>
+                    CCNA R&S: Scaling Networks<br>
+                    CCNA R&S: Routing and Switching Essentials<br>
+                    CCNA R&S: Introduction to Networks<br>
+                    Introduction to Cybersecurity<br>
+                    Mobility Fundamentals
+                </p>
+            </section>
+        </div>
+    </main>
 
     <footer>
-        <p>&copy; Emrullah ERDOĞAN. Tüm Hakları Saklıdır.</p>
+        <p>
+            &copy; 2025 Emrullah ERDOĞAN. Tüm hakları saklıdır.
+        </p>
     </footer>
-
+    <div class="matrix"></div>
     <script src="animation.js"></script>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QG6SEW01N9"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-QG6SEW01N9');
+    </script>
 </body>
 
 </html>

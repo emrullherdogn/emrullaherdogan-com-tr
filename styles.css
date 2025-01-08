@@ -1,0 +1,416 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    overflow: hidden;
+    background: linear-gradient(45deg, lightgreen, midnightblue);
+    background-size: 400% 400%;
+    animation: gradientAnimation 15s ease infinite;
+    overflow-y: scroll;
+}
+
+@keyframes gradientAnimation {
+
+    0%,
+    100% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+}
+
+main {
+    flex: 1;
+    padding: 5rem 1rem 1rem 1rem;
+    text-align: center;
+    overflow: hidden;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.content-box {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 1rem;
+    margin: 1rem;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 600px;
+    /* Sabit genişlik */
+    border-left-width: 50px;
+    border-right-width: 50px;
+    height: 150px;
+    /* Sabit yükseklik */
+    box-sizing: border-box;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    margin-bottom: 2rem;
+    /* Alt boşluk ekle */
+}
+
+.content-box::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: 0;
+    width: 100%;
+    height: 10px;
+    background: white;
+    border-radius: 5px 5px 0 0;
+    z-index: 2;
+}
+
+.content-box:nth-child(1),
+.content-box:nth-child(4) {
+    animation: slideInFromLeft 0.5s ease-out;
+}
+
+.content-box:nth-child(2),
+.content-box:nth-child(5) {
+    animation: slideInFromTop 0.5s ease-out;
+}
+
+.content-box:nth-child(3),
+.content-box:nth-child(6) {
+    animation: slideInFromRight 0.5s ease-out;
+}
+
+.content-box:nth-child(3) {
+    width: 300px; /* Genişlik 300px olarak ayarlandı */
+    height: 200px; /* Yükseklik biraz düşürüldü */
+}
+
+.content-box:nth-child(3) .read-more {
+    display: none; /* Devamını oku butonu kaldırıldı */
+}
+
+@keyframes slideInFromLeft {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideInFromTop {
+    0% {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideInFromRight {
+    0% {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.content-box p {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.read-more {
+    color: blue;
+    cursor: pointer;
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+}
+
+.expanded .read-more {
+    display: none;
+}
+
+.expanded {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    /* Genişliği artır */
+    height: 80%;
+    /* Yüksekliği artır */
+    z-index: 1000;
+    background-color: white;
+    overflow: auto;
+    display: flex;
+    /* Flexbox kullanarak içeriği hizala */
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.expanded p {
+    white-space: normal;
+}
+
+#pp {
+    align-items: center;
+}
+
+.close-btn {
+    display: none;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    cursor: pointer;
+    font-size: 1.5rem;
+    color: red;
+}
+
+.expanded .close-btn {
+    display: block;
+}
+
+.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.hidden:nth-child(1),
+.hidden:nth-child(4) {
+    animation: slideOutToLeft 0.5s ease-out;
+}
+
+.hidden:nth-child(2),
+.hidden:nth-child(5) {
+    animation: slideOutToTop 0.5s ease-out;
+}
+
+.hidden:nth-child(3),
+.hidden:nth-child(6) {
+    animation: slideOutToRight 0.5s ease-out;
+}
+
+@keyframes slideOutToLeft {
+    0% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+}
+
+@keyframes slideOutToTop {
+    0% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+}
+
+@keyframes slideOutToRight {
+    0% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+}
+
+@media (max-width: 600px) {
+    body {
+        padding: 0 1rem;
+        overflow-y: auto;
+    }
+
+    .content-box {
+        width: 100%;
+        height: auto;
+    }
+
+    .expanded {
+        width: auto;
+        height: auto;
+        max-width: 90%;
+        max-height: 90%;
+        top: 10%;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .close-btn {
+        display: none;
+    }
+
+    .centered-text {
+        display: none;
+    }
+}
+
+nav {
+    position: absolute;
+    left: -200px;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #4CAF50;
+    padding: 1rem;
+    border-radius: 0 5px 5px 0;
+    transition: left 0.3s ease;
+}
+
+nav.open {
+    left: 0;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    margin: 1rem 0;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.content-section {
+    display: flex;
+    flex-direction: column; /* Yukarıdan aşağıya sıralamak için */
+    align-items: center; /* Ortalamak için */
+    width: 100%; /* Tüm genişliği kapla */
+}
+
+@keyframes fall {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        top: 100%;
+        opacity: 0;
+    }
+}
+
+.matrix {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 999;
+    overflow: hidden;
+}
+
+.matrix span {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: rgba(0, 0, 0, 0.8);
+    animation: fall linear infinite;
+}
+
+.snowflake {
+    position: fixed;
+    top: -10px;
+    color: white;
+    font-size: 1em;
+    z-index: 1;
+    pointer-events: none;
+    animation: fall linear infinite;
+}
+
+@media (max-width: 600px) {
+    .matrix {
+        display: none;
+    }
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 1rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+.navbar ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    gap: 70px;
+}
+
+.navbar ul li {
+    margin: 0 1rem;
+}
+
+.navbar ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    position: relative;
+}
+
+.navbar ul li a i {
+    font-size: 1.5rem;
+}
+
+.navbar ul li a span {
+    display: none; /* İsimlerin gözükmesini kaldır */
+}
+
+main {
+    padding-top: 5rem;
+}
+
+.about-content-box img {
+    max-width: 75px;
+    /* Resim genişliğini küçült */
+    max-height: 75px;
+    /* Resim yüksekliğini küçült */
+    border-radius: 50%;
+    /* Yuvarlak resim */
+    margin-right: 1rem;
+    /* Sağ boşluk */
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+}

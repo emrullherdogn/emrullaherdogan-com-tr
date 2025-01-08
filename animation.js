@@ -1,17 +1,33 @@
-function showSection(sectionId) {
-    const sections = document.querySelectorAll('.content');
-    const targetSection = document.getElementById(sectionId);
-
-    // Diğer içerikleri gizle
-    sections.forEach(function (section) {
-        section.classList.remove('active');
-        section.style.transition = 'none'; // Animasyonu durdur
-        section.style.display = 'none'; // Gizle
+function expandBox(element) {
+    var box = element.parentElement;
+    var allBoxes = document.querySelectorAll('.content-box');
+    allBoxes.forEach(function (b) {
+        if (b !== box) {
+            b.classList.add('hidden');
+        }
     });
-
-    // Hedef bölümü göster
-    targetSection.classList.add('active');
-    targetSection.style.display = 'block'; // Görünür yap
+    box.classList.add('expanded');
 }
 
+function collapseBox(element) {
+    var box = element.parentElement;
+    var allBoxes = document.querySelectorAll('.content-box');
+    allBoxes.forEach(function (b) {
+        b.classList.remove('hidden');
+    });
+    box.classList.remove('expanded');
+}
 
+function createSnowflake() {
+    const snowflake = document.createElement('div');
+    snowflake.classList.add('snowflake');
+    snowflake.textContent = '❄';
+    snowflake.style.left = Math.random() * 100 + 'vw';
+    snowflake.style.animationDuration = Math.random() * 3 + 2 + 's';
+    document.body.appendChild(snowflake);
+    setTimeout(() => {
+        snowflake.remove();
+    }, 5000);
+}
+
+setInterval(createSnowflake, 100);
