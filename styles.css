@@ -42,17 +42,17 @@ main {
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     width: 600px;
-    /* Sabit genişlik */
+    
     border-left-width: 50px;
     border-right-width: 50px;
     height: 150px;
-    /* Sabit yükseklik */
+    
     box-sizing: border-box;
     position: relative;
     overflow: hidden;
     transition: transform 0.3s ease, opacity 0.3s ease;
     margin-bottom: 2rem;
-    /* Alt boşluk ekle */
+   
 }
 
 .content-box::before {
@@ -83,13 +83,12 @@ main {
 }
 
 .content-box:nth-child(3) {
-    width: 300px; /* Genişlik 300px olarak ayarlandı */
-    height: 200px; /* Yükseklik biraz düşürüldü */
+    width: 300px; 
+    height: 200px; 
 }
 
 .content-box:nth-child(3) .read-more {
-    display: none; /* Devamını oku butonu kaldırıldı */
-}
+    display: none; 
 
 @keyframes slideInFromLeft {
     0% {
@@ -305,9 +304,9 @@ nav ul li a {
 
 .content-section {
     display: flex;
-    flex-direction: column; /* Yukarıdan aşağıya sıralamak için */
-    align-items: center; /* Ortalamak için */
-    width: 100%; /* Tüm genişliği kapla */
+    flex-direction: column; 
+    align-items: center; 
+    width: 100%; 
 }
 
 @keyframes fall {
@@ -390,7 +389,7 @@ nav ul li a {
 }
 
 .navbar ul li a span {
-    display: none; /* İsimlerin gözükmesini kaldır */
+    display: none; 
 }
 
 main {
@@ -399,13 +398,13 @@ main {
 
 .about-content-box img {
     max-width: 75px;
-    /* Resim genişliğini küçült */
+    
     max-height: 75px;
-    /* Resim yüksekliğini küçült */
+    
     border-radius: 50%;
-    /* Yuvarlak resim */
+   
     margin-right: 1rem;
-    /* Sağ boşluk */
+    
 }
 
 footer {
